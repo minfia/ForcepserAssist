@@ -24,7 +24,7 @@ setlocal ENABLEDELAYEDEXPANSION
 
 title Forcepser Assist
 
-set SCRIPT_VER=1.0.0
+set SCRIPT_VER=1.1.0
 
 
 @rem パス指定
@@ -55,5 +55,8 @@ forcepser.exe
 
 
 @rem リリースノート
+@rem 2019/8/18 (v1.1.0)
+@rem     プロジェクトファイルをD&Dでも行えるように変更
+@rem     バッチ実行時のドライブレターとcd先のドライブレターが違う場合にかんしくんが起動しないのを修正
 @rem 2019/8/12 (v1.0.0)
 @rem     初回リリース
