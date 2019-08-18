@@ -24,7 +24,7 @@ setlocal ENABLEDELAYEDEXPANSION
 
 title Forcepser Assist
 
-set SCRIPT_VER=1.0.0
+set SCRIPT_VER=1.1.0
 
 
 @rem パス指定
@@ -34,20 +34,29 @@ set FORCEPSER_DIR="""forcepser.exeのあるフォルダ"""
 
 
 
+set DD_PROJECT_FILE="%~1"
+if %DD_PROJECT_FILE% neq "" (
+    set PROJECT_FILE=""%DD_PROJECT_FILE%""
+) else (
+    set PROJECT_FILE=%PROJECT_FILE%.aup
+)
+
 set PROJECT_DIR_PRE=%~dp0
 set PROJECT_DIR_PRE=!PROJECT_DIR_PRE:~0,-1!
-set PROJECT_DIR=%PROJECT_DIR_PRE%
-set PROJECT_DIR_PRE="""%PROJECT_DIR_PRE%"""
+set PROJECT_DIR="""%PROJECT_DIR_PRE%"""
 
 copy /y %PROJECT_DIR%\setting.txt %FORCEPSER_DIR%
 
-start %AVIUTL_DIR%\aviutl.exe %PROJECT_FILE%.aup
+start %AVIUTL_DIR%\aviutl.exe %PROJECT_FILE%
 
 
-cd %FORCEPSER_DIR%
+cd /d %FORCEPSER_DIR%
 forcepser.exe
 
 
 @rem リリースノート
+@rem 2019/8/18 (v1.1.0)
+@rem     プロジェクトファイルをD&Dでも行えるように変更
+@rem     バッチ実行時のドライブレターとcd先のドライブレターが違う場合にかんしくんが起動しないのを修正
 @rem 2019/8/12 (v1.0.0)
 @rem     初回リリース
