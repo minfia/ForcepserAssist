@@ -34,14 +34,20 @@ set FORCEPSER_DIR="""forcepser.exe‚Ì‚ ‚éƒtƒHƒ‹ƒ_"""
 
 
 
+set DD_PROJECT_FILE="%~1"
+if %DD_PROJECT_FILE% neq "" (
+    set PROJECT_FILE=""%DD_PROJECT_FILE%""
+) else (
+    set PROJECT_FILE=%PROJECT_FILE%.aup
+)
+
 set PROJECT_DIR_PRE=%~dp0
 set PROJECT_DIR_PRE=!PROJECT_DIR_PRE:~0,-1!
-set PROJECT_DIR=%PROJECT_DIR_PRE%
-set PROJECT_DIR_PRE="""%PROJECT_DIR_PRE%"""
+set PROJECT_DIR="""%PROJECT_DIR_PRE%"""
 
 copy /y %PROJECT_DIR%\setting.txt %FORCEPSER_DIR%
 
-start %AVIUTL_DIR%\aviutl.exe %PROJECT_FILE%.aup
+start %AVIUTL_DIR%\aviutl.exe %PROJECT_FILE%
 
 
 cd /d %FORCEPSER_DIR%
