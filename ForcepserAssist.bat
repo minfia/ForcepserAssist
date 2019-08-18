@@ -44,7 +44,7 @@ copy /y %PROJECT_DIR%\setting.txt %FORCEPSER_DIR%
 start %AVIUTL_DIR%\aviutl.exe %PROJECT_FILE%.aup
 
 
-cd %FORCEPSER_DIR%
+cd /d %FORCEPSER_DIR%
 forcepser.exe
 
 
