@@ -24,7 +24,7 @@ setlocal ENABLEDELAYEDEXPANSION
 
 title Forcepser Assist
 
-set SCRIPT_VER=1.1.0
+set SCRIPT_VER=1.2.0
 
 
 @rem パス指定
@@ -104,6 +104,8 @@ exit
 exit /b
 
 @rem リリースノート
+@rem 2019/9/8 (v1.2.0)
+@rem     settingファイルをD&Dでも行えるように変更
 @rem 2019/8/18 (v1.1.0)
 @rem     プロジェクトファイルをD&Dでも行えるように変更
 @rem     バッチ実行時のドライブレターとcd先のドライブレターが違う場合にかんしくんが起動しないのを修正
